@@ -172,3 +172,135 @@ def load_and_audit(raw_dir: Path):
     }
 
     return climate, population, audit
+
+
+# Country-name standardization
+
+# Manually reviewed naming differences.
+# Do not automatically assume similar names
+# describe equivalent geographic populations.
+
+COUNTRY_ALIASES = {
+    "burma": "myanmar",
+    "congo": "republic of the congo",
+    "congo democratic republic of the": "dr congo",
+    "cote d ivoire": "ivory coast",
+    "falkland islands islas malvinas": "falkland islands",
+    "federated states of micronesia": "micronesia",
+    "macedonia": "north macedonia",
+    "palestina": "palestine",
+    "swaziland": "eswatini",
+    "turks and caicas islands": "turks and caicos islands",
+    "virgin islands": "united states virgin islands",
+}
+
+
+def normalize_country(name):
+    """Normalize formatting without fuzzy matching."""
+
+    name = unicodedata.normalize(
+        "NFKD", str(name)
+    )
+
+    name = "".join(
+        char for char in name
+        if not unicodedata.combining(char)
+    )
+
+    name = name.casefold()
+    name = name.replace("&", " and ")
+
+    name = re.sub(
+        r"[^a-z0-9]+",
+        " ",
+        name
+    )
+
+    return name.strip()
+
+
+def make_country_crosswalk(
+    climate,
+    population
+):
+    """Create an auditable climate-to-population crosswalk."""
+
+    pop_reference = population[
+        ["CCA3", "Country/Territory"]
+    ].copy()
+
+    pop_reference["join_key"] = (
+        pop_reference["Country/Territory"]
+        .map(normalize_country)
+    )
+
+    if pop_reference["join_key"].duplicated().any():
+        raise ValueError(
+            "Population country names have duplicate normalized keys."
+        )
+
+    climate_reference = (
+        climate[["Country"]]
+        .drop_duplicates()
+        .rename(
+            columns={"Country": "climate_country"}
+        )
+    )
+
+    climate_reference["normalized_name"] = (
+        climate_reference["climate_country"]
+        .map(normalize_country)
+    )
+
+    climate_reference["join_key"] = (
+        climate_reference["normalized_name"]
+        .replace(COUNTRY_ALIASES)
+    )
+
+    crosswalk = climate_reference.merge(
+        pop_reference,
+        on="join_key",
+        how="left",
+        validate="many_to_one",
+        indicator=True
+    )
+
+    crosswalk = crosswalk.rename(
+        columns={
+            "CCA3": "cca3",
+            "Country/Territory": "population_country",
+        }
+    )
+
+    crosswalk["matching_method"] = np.select(
+        [
+            crosswalk["_merge"].eq("left_only"),
+            crosswalk["normalized_name"].isin(
+                COUNTRY_ALIASES
+            ),
+            crosswalk["climate_country"].eq(
+                crosswalk["population_country"]
+            ),
+        ],
+        [
+            "unmatched",
+            "manual_alias",
+            "exact",
+        ],
+        default="normalized"
+    )
+
+    matched = crosswalk[
+        crosswalk["_merge"].eq("both")
+    ].copy()
+
+    if matched["cca3"].duplicated().any():
+        raise ValueError(
+            "Multiple climate locations map to one country. "
+            "Review the country crosswalk."
+        )
+
+    return (
+        matched.drop(columns="_merge"),
+        crosswalk.drop(columns="_merge")
+    )
