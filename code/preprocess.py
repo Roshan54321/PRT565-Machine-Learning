@@ -304,3 +304,82 @@ def make_country_crosswalk(
         matched.drop(columns="_merge"),
         crosswalk.drop(columns="_merge")
     )
+
+
+
+# Annual temperature aggregation
+
+
+def annual_climate_table(
+    climate,
+    matched_countries
+):
+    """Calculate annual means from complete monthly records."""
+
+    climate_matched = climate.merge(
+        matched_countries[
+            ["climate_country", "cca3"]
+        ],
+        left_on="Country",
+        right_on="climate_country",
+        how="inner",
+        validate="many_to_one"
+    )
+
+    climate_matched["year"] = (
+        climate_matched["dt"].dt.year
+    )
+
+    # Restrict the period to the historical
+    # decades needed for the project.
+
+    climate_matched = climate_matched[
+        climate_matched["year"].between(
+            ANNUAL_START,
+            ANNUAL_END
+        )
+    ].copy()
+
+    annual = climate_matched.groupby(
+        ["cca3", "year"],
+        as_index=False
+    ).agg(
+        annual_mean_temp_c=(
+            "AverageTemperature",
+            "mean"
+        ),
+        valid_months=(
+            "AverageTemperature",
+            "count"
+        ),
+        annual_mean_uncertainty_c=(
+            "AverageTemperatureUncertainty",
+            "mean"
+        )
+    )
+
+    # Audit incomplete country-years.
+
+    incomplete = annual[
+        annual["valid_months"] < MIN_MONTHS_PER_YEAR
+    ].copy()
+
+    # Keep complete annual observations only.
+
+    annual = annual[
+        annual["valid_months"] == MIN_MONTHS_PER_YEAR
+    ].copy()
+
+    if annual.duplicated(
+        ["cca3", "year"]
+    ).any():
+        raise AssertionError(
+            "Duplicate annual climate observations."
+        )
+
+    return (
+        annual.sort_values(
+            ["cca3", "year"]
+        ).reset_index(drop=True),
+        incomplete
+    )
