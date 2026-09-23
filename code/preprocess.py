@@ -383,3 +383,98 @@ def annual_climate_table(
         ).reset_index(drop=True),
         incomplete
     )
+
+
+
+# Decadal climate feature engineering
+
+
+def compute_decadal_climate(annual):
+    """Calculate warming trends and temperature volatility."""
+
+    records = []
+
+    for cca3, group in annual.groupby("cca3"):
+
+        country = group.set_index("year")
+
+        for start in (1960, 1970, 1980, 1990, 2000):
+
+            years = np.arange(
+                start,
+                start + YEARS_PER_DECADE
+            )
+
+            # Require all ten complete annual values.
+
+            if not set(years).issubset(country.index):
+                continue
+
+            decade = country.loc[years]
+
+            temperatures = (
+                decade["annual_mean_temp_c"]
+                .to_numpy(dtype=float)
+            )
+
+            centered_years = (
+                years.astype(float) - years.mean()
+            )
+
+            # Ordinary least-squares trend.
+
+            slope_per_year = (
+                np.dot(
+                    centered_years,
+                    temperatures - temperatures.mean()
+                )
+                / np.dot(
+                    centered_years,
+                    centered_years
+                )
+            )
+
+            fitted = (
+                temperatures.mean()
+                + slope_per_year * centered_years
+            )
+
+            residuals = temperatures - fitted
+
+            records.append({
+                "cca3": cca3,
+                "decade_start": start,
+                "decade_end": start + 9,
+                "mean_temp_c": float(
+                    temperatures.mean()
+                ),
+                "warming_c_per_decade": float(
+                    slope_per_year * 10
+                ),
+                "detrended_volatility_c": float(
+                    residuals.std(ddof=1)
+                ),
+                "mean_uncertainty_c": float(
+                    decade[
+                        "annual_mean_uncertainty_c"
+                    ].mean()
+                ),
+            })
+
+    decades = pd.DataFrame(records)
+
+    if decades.empty:
+        raise ValueError(
+            "No complete climate decades were generated."
+        )
+
+    if decades.duplicated(
+        ["cca3", "decade_start"]
+    ).any():
+        raise AssertionError(
+            "Duplicate country-decade records."
+        )
+
+    return decades.sort_values(
+        ["cca3", "decade_start"]
+    ).reset_index(drop=True)
