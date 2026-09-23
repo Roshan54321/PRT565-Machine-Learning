@@ -478,3 +478,100 @@ def compute_decadal_climate(annual):
     return decades.sort_values(
         ["cca3", "decade_start"]
     ).reset_index(drop=True)
+
+
+
+# Historical population feature engineering
+
+
+def historical_population_panel(population):
+    """Convert population snapshots into country-year rows."""
+
+    population_columns = [
+        f"{year} Population"
+        for year in (1970, 1980, 1990, 2000, 2010)
+    ]
+
+    panel = population.melt(
+        id_vars=[
+            "CCA3",
+            "Country/Territory",
+            "Continent",
+            "Area (km²)",
+        ],
+        value_vars=population_columns,
+        var_name="population_year",
+        value_name="population"
+    )
+
+    panel = panel.rename(
+        columns={
+            "CCA3": "cca3",
+            "Country/Territory": "country",
+            "Continent": "continent",
+            "Area (km²)": "area_km2",
+        }
+    )
+
+    panel["population_year"] = (
+        panel["population_year"]
+        .str.extract(r"(\d{4})")
+        .astype(int)
+    )
+
+    panel = panel.sort_values(
+        ["cca3", "population_year"]
+    ).reset_index(drop=True)
+
+    # Historical population density.
+
+    panel["density_per_km2"] = (
+        panel["population"] / panel["area_km2"]
+    )
+
+    # Previous population snapshot for each country.
+
+    previous_population = (
+        panel.groupby("cca3")["population"]
+        .shift(1)
+    )
+
+    # Percentage growth over the previous decade.
+
+    panel["growth_prior_decade_pct"] = (
+        (
+            panel["population"]
+            / previous_population
+        ) - 1
+    ) * 100
+
+    # No 1960 population exists in this dataset,
+    # so prior growth for 1970 remains unknown.
+
+    panel.loc[
+        panel["population_year"] == 1970,
+        "growth_prior_decade_pct"
+    ] = np.nan
+
+    if panel[
+        ["population", "density_per_km2"]
+    ].isna().any().any():
+        raise ValueError(
+            "Missing historical population values."
+        )
+
+    if (
+        panel["population"] <= 0
+    ).any():
+        raise ValueError(
+            "Nonpositive population values found."
+        )
+
+    if panel.duplicated(
+        ["cca3", "population_year"]
+    ).any():
+        raise AssertionError(
+            "Duplicate country-year population records."
+        )
+
+    return panel
