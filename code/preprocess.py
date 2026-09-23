@@ -575,3 +575,144 @@ def historical_population_panel(population):
         )
 
     return panel
+
+
+# Climate and population integration
+
+
+def build_country_periods(
+    decadal_climate,
+    population_panel
+):
+    """Construct historical predictor and outcome periods."""
+
+    # Select the population at each reference year.
+
+    current_population = population_panel[
+        population_panel["population_year"].isin(
+            REFERENCE_YEARS
+        )
+    ].copy()
+
+    current_population = current_population.rename(
+        columns={
+            "population_year": "reference_year",
+            "population": "population_at_reference",
+            "density_per_km2": (
+                "density_at_reference_per_km2"
+            ),
+            "growth_prior_decade_pct": (
+                "population_growth_prior_decade_pct"
+            ),
+        }
+    )
+
+    # Historical climate predictors end before
+    # the reference year.
+
+    current_population["prior_decade_start"] = (
+        current_population["reference_year"] - 10
+    )
+
+    previous_climate = decadal_climate.rename(
+        columns={
+            "decade_start": "prior_decade_start",
+            "mean_temp_c": "prior_decade_mean_temp_c",
+            "warming_c_per_decade": (
+                "prior_decade_warming_c_per_decade"
+            ),
+            "detrended_volatility_c": (
+                "prior_decade_detrended_volatility_c"
+            ),
+            "mean_uncertainty_c": (
+                "prior_decade_mean_temp_uncertainty_c"
+            ),
+        }
+    )
+
+    climate_predictor_columns = [
+        "cca3",
+        "prior_decade_start",
+        "prior_decade_mean_temp_c",
+        "prior_decade_warming_c_per_decade",
+        "prior_decade_detrended_volatility_c",
+        "prior_decade_mean_temp_uncertainty_c",
+    ]
+
+    periods = current_population.merge(
+        previous_climate[climate_predictor_columns],
+        on=["cca3", "prior_decade_start"],
+        how="inner",
+        validate="many_to_one"
+    )
+
+    # Following-decade warming is an outcome,
+    # never a predictor.
+
+    future_climate = decadal_climate[
+        [
+            "cca3",
+            "decade_start",
+            "warming_c_per_decade",
+        ]
+    ].rename(
+        columns={
+            "decade_start": "reference_year",
+            "warming_c_per_decade": (
+                "future_warming_c_per_decade"
+            ),
+        }
+    )
+
+    periods = periods.merge(
+        future_climate,
+        on=["cca3", "reference_year"],
+        how="inner",
+        validate="many_to_one"
+    )
+
+    # Population at the end of the outcome decade.
+
+    future_population = population_panel[
+        [
+            "cca3",
+            "population_year",
+            "population",
+            "density_per_km2",
+        ]
+    ].rename(
+        columns={
+            "population_year": "outcome_population_year",
+            "population": "outcome_population",
+            "density_per_km2": (
+                "future_density_per_km2"
+            ),
+        }
+    )
+
+    periods["outcome_population_year"] = (
+        periods["reference_year"] + 10
+    )
+
+    periods = periods.merge(
+        future_population,
+        on=["cca3", "outcome_population_year"],
+        how="inner",
+        validate="many_to_one"
+    )
+
+    if periods.empty:
+        raise ValueError(
+            "No matching country-period observations."
+        )
+
+    if periods.duplicated(
+        ["cca3", "reference_year"]
+    ).any():
+        raise AssertionError(
+            "Duplicate country-period observations."
+        )
+
+    return periods.sort_values(
+        ["cca3", "reference_year"]
+    ).reset_index(drop=True)
