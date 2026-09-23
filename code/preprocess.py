@@ -716,3 +716,183 @@ def build_country_periods(
     return periods.sort_values(
         ["cca3", "reference_year"]
     ).reset_index(drop=True)
+
+
+# -------------------------------------------------
+# Target construction and temporal split
+# -------------------------------------------------
+
+CLASS_NAMES = ("Low", "Medium", "High")
+
+TARGET_COLUMN = "target_exposure_class"
+
+NUMERIC_PREDICTORS = [
+    "population_at_reference",
+    "density_at_reference_per_km2",
+    "population_growth_prior_decade_pct",
+    "prior_decade_mean_temp_c",
+    "prior_decade_warming_c_per_decade",
+    "prior_decade_detrended_volatility_c",
+    "prior_decade_mean_temp_uncertainty_c",
+    "area_km2",
+]
+
+CATEGORICAL_PREDICTORS = ["continent"]
+
+PREDICTORS = (
+    NUMERIC_PREDICTORS
+    + CATEGORICAL_PREDICTORS
+)
+
+
+def percentile_against_training(
+    values,
+    sorted_reference
+):
+    """Calculate percentiles using a fixed training reference."""
+
+    if len(sorted_reference) == 0:
+        raise ValueError(
+            "Empty training reference distribution."
+        )
+
+    return (
+        np.searchsorted(
+            sorted_reference,
+            values,
+            side="right"
+        )
+        / len(sorted_reference)
+    )
+
+
+def create_exposure_labels(periods):
+    """Construct labels without fitting cutoffs to test data."""
+
+    train = periods[
+        periods["reference_year"] < TEST_REFERENCE_YEAR
+    ].copy()
+
+    test = periods[
+        periods["reference_year"] == TEST_REFERENCE_YEAR
+    ].copy()
+
+    if train.empty or test.empty:
+        raise ValueError(
+            "Training or testing period is empty."
+        )
+
+    # Check the required outcome variables.
+
+    outcome_columns = [
+        "future_warming_c_per_decade",
+        "future_density_per_km2",
+        "outcome_population",
+    ]
+
+    for frame in (train, test):
+
+        values = frame[
+            outcome_columns
+        ].to_numpy(dtype=float)
+
+        if not np.isfinite(values).all():
+            raise ValueError(
+                "Missing or nonfinite outcome data."
+            )
+
+        if (
+            frame["future_density_per_km2"] <= 0
+        ).any():
+            raise ValueError(
+                "Future density must be positive."
+            )
+
+    # Reference distributions from training data only.
+
+    warming_reference = np.sort(
+        train[
+            "future_warming_c_per_decade"
+        ].to_numpy(dtype=float)
+    )
+
+    density_reference = np.sort(
+        np.log1p(
+            train["future_density_per_km2"]
+        ).to_numpy(dtype=float)
+    )
+
+    # Calculate the index for both periods using
+    # the same frozen reference distributions.
+
+    for frame in (train, test):
+
+        frame["warming_percentile"] = (
+            percentile_against_training(
+                frame[
+                    "future_warming_c_per_decade"
+                ].to_numpy(dtype=float),
+                warming_reference
+            )
+        )
+
+        frame["density_percentile"] = (
+            percentile_against_training(
+                np.log1p(
+                    frame["future_density_per_km2"]
+                ).to_numpy(dtype=float),
+                density_reference
+            )
+        )
+
+        # Geometric mean: both components matter.
+
+        frame["future_exposure_index"] = np.sqrt(
+            frame["warming_percentile"]
+            * frame["density_percentile"]
+        )
+
+    # Freeze class boundaries using training data.
+
+    cutoffs = np.quantile(
+        train["future_exposure_index"],
+        [1 / 3, 2 / 3]
+    )
+
+    if np.isclose(cutoffs[0], cutoffs[1]):
+        raise ValueError(
+            "Exposure class boundaries overlap."
+        )
+
+    for frame in (train, test):
+
+        frame[TARGET_COLUMN] = pd.Categorical(
+            np.select(
+                [
+                    frame["future_exposure_index"]
+                    < cutoffs[0],
+
+                    frame["future_exposure_index"]
+                    < cutoffs[1],
+                ],
+                ["Low", "Medium"],
+                default="High"
+            ),
+            categories=CLASS_NAMES,
+            ordered=True
+        )
+
+    label_metadata = {
+        "target": (
+            "Constructed subsequent warming-density "
+            "exposure proxy"
+        ),
+        "train_years": [1970, 1980, 1990],
+        "test_year": 2000,
+        "low_medium_cutoff": float(cutoffs[0]),
+        "medium_high_cutoff": float(cutoffs[1]),
+        "predictors": PREDICTORS,
+        "class_order": list(CLASS_NAMES),
+    }
+
+    return train, test, label_metadata
