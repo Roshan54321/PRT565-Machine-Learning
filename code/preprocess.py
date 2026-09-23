@@ -896,3 +896,196 @@ def create_exposure_labels(periods):
     }
 
     return train, test, label_metadata
+
+
+# -------------------------------------------------
+# Reproducible pipeline and exports
+# -------------------------------------------------
+
+def run_pipeline(project_root):
+    """Run the complete preprocessing pipeline."""
+
+    project_root = Path(project_root).resolve()
+
+    raw_dir = project_root / "data" / "raw"
+
+    output_dir = (
+        project_root / "data" / "processed"
+    )
+
+    output_dir.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    climate, population, audit = load_and_audit(
+        raw_dir
+    )
+
+    matched, crosswalk = make_country_crosswalk(
+        climate,
+        population
+    )
+
+    annual, incomplete = annual_climate_table(
+        climate,
+        matched
+    )
+
+    decades = compute_decadal_climate(
+        annual
+    )
+
+    panel = historical_population_panel(
+        population
+    )
+
+    periods = build_country_periods(
+        decades,
+        panel
+    )
+
+    train, test, metadata = create_exposure_labels(
+        periods
+    )
+
+    # Explicit feature whitelist.
+    # Future outcomes and audit-only scores are excluded.
+
+    model_columns = [
+        "country",
+        "cca3",
+        "reference_year",
+        *PREDICTORS,
+        TARGET_COLUMN,
+    ]
+
+    train_model = train[
+        model_columns
+    ].copy()
+
+    test_model = test[
+        model_columns
+    ].copy()
+
+    forbidden = {
+        "future_warming_c_per_decade",
+        "future_density_per_km2",
+        "outcome_population",
+        "future_exposure_index",
+    }
+
+    if forbidden.intersection(model_columns):
+        raise AssertionError(
+            "Future outcome leakage in predictors."
+        )
+
+    # Save intermediate datasets for reproducibility.
+
+    output_files = {
+        "country_matching_audit.csv": crosswalk,
+        "annual_climate.csv": annual,
+        "incomplete_country_years.csv": incomplete,
+        "decadal_climate_features.csv": decades,
+        "historical_population_panel.csv": panel,
+        "all_country_periods_AUDIT_ONLY.csv": (
+            pd.concat([train, test])
+        ),
+        "ml_train.csv": train_model,
+        "ml_test.csv": test_model,
+    }
+
+    for filename, dataframe in output_files.items():
+
+        dataframe.to_csv(
+            output_dir / filename,
+            index=False
+        )
+
+    # Extend the data-quality report.
+
+    audit.update({
+        "matched_countries": int(
+            matched["cca3"].nunique()
+        ),
+        "unmatched_climate_locations": int(
+            crosswalk["population_country"].isna().sum()
+        ),
+        "complete_country_years": int(
+            len(annual)
+        ),
+        "incomplete_country_years": int(
+            len(incomplete)
+        ),
+        "complete_country_decades": int(
+            len(decades)
+        ),
+        "country_periods": int(
+            len(periods)
+        ),
+        "training_observations": int(
+            len(train_model)
+        ),
+        "testing_observations": int(
+            len(test_model)
+        ),
+        "training_class_distribution": (
+            train_model[TARGET_COLUMN]
+            .value_counts()
+            .to_dict()
+        ),
+        "testing_class_distribution": (
+            test_model[TARGET_COLUMN]
+            .value_counts()
+            .to_dict()
+        ),
+        "missing_training_growth": int(
+            train_model[
+                "population_growth_prior_decade_pct"
+            ].isna().sum()
+        ),
+    })
+
+    # Export methodological documentation.
+
+    with open(
+        output_dir / "data_quality_report.json",
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            audit,
+            file,
+            indent=4,
+            ensure_ascii=False
+        )
+
+    with open(
+        output_dir / "label_definition.json",
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            metadata,
+            file,
+            indent=4
+        )
+
+    print("Preprocessing completed successfully.")
+    print("Model-ready files saved to:", output_dir)
+
+    return {
+        "train": train_model,
+        "test": test_model,
+        "audit": audit,
+        "metadata": metadata,
+    }
+
+
+if __name__ == "__main__":
+
+    root = Path(__file__).resolve().parent.parent
+
+    run_pipeline(root)

@@ -1,0 +1,52 @@
+{
+    "climate_rows": 577462,
+    "population_rows": 234,
+    "climate_countries": 243,
+    "population_countries": 234,
+    "missing_climate_values": {
+        "dt": 0,
+        "AverageTemperature": 32651,
+        "AverageTemperatureUncertainty": 31912,
+        "Country": 0
+    },
+    "missing_population_values": {
+        "Rank": 0,
+        "CCA3": 0,
+        "Country/Territory": 0,
+        "Capital": 0,
+        "Continent": 0,
+        "2022 Population": 0,
+        "2020 Population": 0,
+        "2015 Population": 0,
+        "2010 Population": 0,
+        "2000 Population": 0,
+        "1990 Population": 0,
+        "1980 Population": 0,
+        "1970 Population": 0,
+        "Area (km²)": 0,
+        "Density (per km²)": 0,
+        "Growth Rate": 0,
+        "World Population Percentage": 0
+    },
+    "climate_start_date": "1743-11-01",
+    "climate_end_date": "2013-09-01",
+    "matched_countries": 221,
+    "unmatched_climate_locations": 22,
+    "complete_country_years": 11050,
+    "incomplete_country_years": 0,
+    "complete_country_decades": 1105,
+    "country_periods": 884,
+    "training_observations": 663,
+    "testing_observations": 221,
+    "training_class_distribution": {
+        "Low": 221,
+        "Medium": 221,
+        "High": 221
+    },
+    "testing_class_distribution": {
+        "Medium": 95,
+        "High": 65,
+        "Low": 61
+    },
+    "missing_training_growth": 221
+}

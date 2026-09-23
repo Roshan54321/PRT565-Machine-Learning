@@ -1,0 +1,244 @@
+climate_country,normalized_name,join_key,cca3,population_country,matching_method
+Åland,aland,aland,,,unmatched
+Afghanistan,afghanistan,afghanistan,AFG,Afghanistan,exact
+Africa,africa,africa,,,unmatched
+Albania,albania,albania,ALB,Albania,exact
+Algeria,algeria,algeria,DZA,Algeria,exact
+American Samoa,american samoa,american samoa,ASM,American Samoa,exact
+Andorra,andorra,andorra,AND,Andorra,exact
+Angola,angola,angola,AGO,Angola,exact
+Anguilla,anguilla,anguilla,AIA,Anguilla,exact
+Antarctica,antarctica,antarctica,,,unmatched
+Antigua And Barbuda,antigua and barbuda,antigua and barbuda,ATG,Antigua and Barbuda,normalized
+Argentina,argentina,argentina,ARG,Argentina,exact
+Armenia,armenia,armenia,ARM,Armenia,exact
+Aruba,aruba,aruba,ABW,Aruba,exact
+Asia,asia,asia,,,unmatched
+Australia,australia,australia,AUS,Australia,exact
+Austria,austria,austria,AUT,Austria,exact
+Azerbaijan,azerbaijan,azerbaijan,AZE,Azerbaijan,exact
+Bahamas,bahamas,bahamas,BHS,Bahamas,exact
+Bahrain,bahrain,bahrain,BHR,Bahrain,exact
+Baker Island,baker island,baker island,,,unmatched
+Bangladesh,bangladesh,bangladesh,BGD,Bangladesh,exact
+Barbados,barbados,barbados,BRB,Barbados,exact
+Belarus,belarus,belarus,BLR,Belarus,exact
+Belgium,belgium,belgium,BEL,Belgium,exact
+Belize,belize,belize,BLZ,Belize,exact
+Benin,benin,benin,BEN,Benin,exact
+Bhutan,bhutan,bhutan,BTN,Bhutan,exact
+Bolivia,bolivia,bolivia,BOL,Bolivia,exact
+"Bonaire, Saint Eustatius And Saba",bonaire saint eustatius and saba,bonaire saint eustatius and saba,,,unmatched
+Bosnia And Herzegovina,bosnia and herzegovina,bosnia and herzegovina,BIH,Bosnia and Herzegovina,normalized
+Botswana,botswana,botswana,BWA,Botswana,exact
+Brazil,brazil,brazil,BRA,Brazil,exact
+British Virgin Islands,british virgin islands,british virgin islands,VGB,British Virgin Islands,exact
+Bulgaria,bulgaria,bulgaria,BGR,Bulgaria,exact
+Burkina Faso,burkina faso,burkina faso,BFA,Burkina Faso,exact
+Burma,burma,myanmar,MMR,Myanmar,manual_alias
+Burundi,burundi,burundi,BDI,Burundi,exact
+Côte D'Ivoire,cote d ivoire,ivory coast,CIV,Ivory Coast,manual_alias
+Cambodia,cambodia,cambodia,KHM,Cambodia,exact
+Cameroon,cameroon,cameroon,CMR,Cameroon,exact
+Canada,canada,canada,CAN,Canada,exact
+Cape Verde,cape verde,cape verde,CPV,Cape Verde,exact
+Cayman Islands,cayman islands,cayman islands,CYM,Cayman Islands,exact
+Central African Republic,central african republic,central african republic,CAF,Central African Republic,exact
+Chad,chad,chad,TCD,Chad,exact
+Chile,chile,chile,CHL,Chile,exact
+China,china,china,CHN,China,exact
+Christmas Island,christmas island,christmas island,,,unmatched
+Colombia,colombia,colombia,COL,Colombia,exact
+Comoros,comoros,comoros,COM,Comoros,exact
+Congo (Democratic Republic Of The),congo democratic republic of the,dr congo,COD,DR Congo,manual_alias
+Congo,congo,republic of the congo,COG,Republic of the Congo,manual_alias
+Costa Rica,costa rica,costa rica,CRI,Costa Rica,exact
+Croatia,croatia,croatia,HRV,Croatia,exact
+Cuba,cuba,cuba,CUB,Cuba,exact
+Curaçao,curacao,curacao,CUW,Curacao,normalized
+Cyprus,cyprus,cyprus,CYP,Cyprus,exact
+Czech Republic,czech republic,czech republic,CZE,Czech Republic,exact
+Denmark (Europe),denmark europe,denmark europe,,,unmatched
+Denmark,denmark,denmark,DNK,Denmark,exact
+Djibouti,djibouti,djibouti,DJI,Djibouti,exact
+Dominica,dominica,dominica,DMA,Dominica,exact
+Dominican Republic,dominican republic,dominican republic,DOM,Dominican Republic,exact
+Ecuador,ecuador,ecuador,ECU,Ecuador,exact
+Egypt,egypt,egypt,EGY,Egypt,exact
+El Salvador,el salvador,el salvador,SLV,El Salvador,exact
+Equatorial Guinea,equatorial guinea,equatorial guinea,GNQ,Equatorial Guinea,exact
+Eritrea,eritrea,eritrea,ERI,Eritrea,exact
+Estonia,estonia,estonia,EST,Estonia,exact
+Ethiopia,ethiopia,ethiopia,ETH,Ethiopia,exact
+Europe,europe,europe,,,unmatched
+Falkland Islands (Islas Malvinas),falkland islands islas malvinas,falkland islands,FLK,Falkland Islands,manual_alias
+Faroe Islands,faroe islands,faroe islands,FRO,Faroe Islands,exact
+Federated States Of Micronesia,federated states of micronesia,micronesia,FSM,Micronesia,manual_alias
+Fiji,fiji,fiji,FJI,Fiji,exact
+Finland,finland,finland,FIN,Finland,exact
+France (Europe),france europe,france europe,,,unmatched
+France,france,france,FRA,France,exact
+French Guiana,french guiana,french guiana,GUF,French Guiana,exact
+French Polynesia,french polynesia,french polynesia,PYF,French Polynesia,exact
+French Southern And Antarctic Lands,french southern and antarctic lands,french southern and antarctic lands,,,unmatched
+Gabon,gabon,gabon,GAB,Gabon,exact
+Gambia,gambia,gambia,GMB,Gambia,exact
+Gaza Strip,gaza strip,gaza strip,,,unmatched
+Georgia,georgia,georgia,GEO,Georgia,exact
+Germany,germany,germany,DEU,Germany,exact
+Ghana,ghana,ghana,GHA,Ghana,exact
+Greece,greece,greece,GRC,Greece,exact
+Greenland,greenland,greenland,GRL,Greenland,exact
+Grenada,grenada,grenada,GRD,Grenada,exact
+Guadeloupe,guadeloupe,guadeloupe,GLP,Guadeloupe,exact
+Guam,guam,guam,GUM,Guam,exact
+Guatemala,guatemala,guatemala,GTM,Guatemala,exact
+Guernsey,guernsey,guernsey,GGY,Guernsey,exact
+Guinea Bissau,guinea bissau,guinea bissau,GNB,Guinea-Bissau,normalized
+Guinea,guinea,guinea,GIN,Guinea,exact
+Guyana,guyana,guyana,GUY,Guyana,exact
+Haiti,haiti,haiti,HTI,Haiti,exact
+Heard Island And Mcdonald Islands,heard island and mcdonald islands,heard island and mcdonald islands,,,unmatched
+Honduras,honduras,honduras,HND,Honduras,exact
+Hong Kong,hong kong,hong kong,HKG,Hong Kong,exact
+Hungary,hungary,hungary,HUN,Hungary,exact
+Iceland,iceland,iceland,ISL,Iceland,exact
+India,india,india,IND,India,exact
+Indonesia,indonesia,indonesia,IDN,Indonesia,exact
+Iran,iran,iran,IRN,Iran,exact
+Iraq,iraq,iraq,IRQ,Iraq,exact
+Ireland,ireland,ireland,IRL,Ireland,exact
+Isle Of Man,isle of man,isle of man,IMN,Isle of Man,normalized
+Israel,israel,israel,ISR,Israel,exact
+Italy,italy,italy,ITA,Italy,exact
+Jamaica,jamaica,jamaica,JAM,Jamaica,exact
+Japan,japan,japan,JPN,Japan,exact
+Jersey,jersey,jersey,JEY,Jersey,exact
+Jordan,jordan,jordan,JOR,Jordan,exact
+Kazakhstan,kazakhstan,kazakhstan,KAZ,Kazakhstan,exact
+Kenya,kenya,kenya,KEN,Kenya,exact
+Kingman Reef,kingman reef,kingman reef,,,unmatched
+Kiribati,kiribati,kiribati,KIR,Kiribati,exact
+Kuwait,kuwait,kuwait,KWT,Kuwait,exact
+Kyrgyzstan,kyrgyzstan,kyrgyzstan,KGZ,Kyrgyzstan,exact
+Laos,laos,laos,LAO,Laos,exact
+Latvia,latvia,latvia,LVA,Latvia,exact
+Lebanon,lebanon,lebanon,LBN,Lebanon,exact
+Lesotho,lesotho,lesotho,LSO,Lesotho,exact
+Liberia,liberia,liberia,LBR,Liberia,exact
+Libya,libya,libya,LBY,Libya,exact
+Liechtenstein,liechtenstein,liechtenstein,LIE,Liechtenstein,exact
+Lithuania,lithuania,lithuania,LTU,Lithuania,exact
+Luxembourg,luxembourg,luxembourg,LUX,Luxembourg,exact
+Macau,macau,macau,MAC,Macau,exact
+Macedonia,macedonia,north macedonia,MKD,North Macedonia,manual_alias
+Madagascar,madagascar,madagascar,MDG,Madagascar,exact
+Malawi,malawi,malawi,MWI,Malawi,exact
+Malaysia,malaysia,malaysia,MYS,Malaysia,exact
+Mali,mali,mali,MLI,Mali,exact
+Malta,malta,malta,MLT,Malta,exact
+Martinique,martinique,martinique,MTQ,Martinique,exact
+Mauritania,mauritania,mauritania,MRT,Mauritania,exact
+Mauritius,mauritius,mauritius,MUS,Mauritius,exact
+Mayotte,mayotte,mayotte,MYT,Mayotte,exact
+Mexico,mexico,mexico,MEX,Mexico,exact
+Moldova,moldova,moldova,MDA,Moldova,exact
+Monaco,monaco,monaco,MCO,Monaco,exact
+Mongolia,mongolia,mongolia,MNG,Mongolia,exact
+Montenegro,montenegro,montenegro,MNE,Montenegro,exact
+Montserrat,montserrat,montserrat,MSR,Montserrat,exact
+Morocco,morocco,morocco,MAR,Morocco,exact
+Mozambique,mozambique,mozambique,MOZ,Mozambique,exact
+Namibia,namibia,namibia,NAM,Namibia,exact
+Nepal,nepal,nepal,NPL,Nepal,exact
+Netherlands (Europe),netherlands europe,netherlands europe,,,unmatched
+Netherlands,netherlands,netherlands,NLD,Netherlands,exact
+New Caledonia,new caledonia,new caledonia,NCL,New Caledonia,exact
+New Zealand,new zealand,new zealand,NZL,New Zealand,exact
+Nicaragua,nicaragua,nicaragua,NIC,Nicaragua,exact
+Niger,niger,niger,NER,Niger,exact
+Nigeria,nigeria,nigeria,NGA,Nigeria,exact
+Niue,niue,niue,NIU,Niue,exact
+North America,north america,north america,,,unmatched
+North Korea,north korea,north korea,PRK,North Korea,exact
+Northern Mariana Islands,northern mariana islands,northern mariana islands,NFK,Northern Mariana Islands,exact
+Norway,norway,norway,NOR,Norway,exact
+Oceania,oceania,oceania,,,unmatched
+Oman,oman,oman,OMN,Oman,exact
+Pakistan,pakistan,pakistan,PAK,Pakistan,exact
+Palau,palau,palau,PLW,Palau,exact
+Palestina,palestina,palestine,PSE,Palestine,manual_alias
+Palmyra Atoll,palmyra atoll,palmyra atoll,,,unmatched
+Panama,panama,panama,PAN,Panama,exact
+Papua New Guinea,papua new guinea,papua new guinea,PNG,Papua New Guinea,exact
+Paraguay,paraguay,paraguay,PRY,Paraguay,exact
+Peru,peru,peru,PER,Peru,exact
+Philippines,philippines,philippines,PHL,Philippines,exact
+Poland,poland,poland,POL,Poland,exact
+Portugal,portugal,portugal,PRT,Portugal,exact
+Puerto Rico,puerto rico,puerto rico,PRI,Puerto Rico,exact
+Qatar,qatar,qatar,QAT,Qatar,exact
+Reunion,reunion,reunion,REU,Reunion,exact
+Romania,romania,romania,ROU,Romania,exact
+Russia,russia,russia,RUS,Russia,exact
+Rwanda,rwanda,rwanda,RWA,Rwanda,exact
+Saint Barthélemy,saint barthelemy,saint barthelemy,BLM,Saint Barthelemy,normalized
+Saint Kitts And Nevis,saint kitts and nevis,saint kitts and nevis,KNA,Saint Kitts and Nevis,normalized
+Saint Lucia,saint lucia,saint lucia,LCA,Saint Lucia,exact
+Saint Martin,saint martin,saint martin,MAF,Saint Martin,exact
+Saint Pierre And Miquelon,saint pierre and miquelon,saint pierre and miquelon,SPM,Saint Pierre and Miquelon,normalized
+Saint Vincent And The Grenadines,saint vincent and the grenadines,saint vincent and the grenadines,VCT,Saint Vincent and the Grenadines,normalized
+Samoa,samoa,samoa,WSM,Samoa,exact
+San Marino,san marino,san marino,SMR,San Marino,exact
+Sao Tome And Principe,sao tome and principe,sao tome and principe,STP,Sao Tome and Principe,normalized
+Saudi Arabia,saudi arabia,saudi arabia,SAU,Saudi Arabia,exact
+Senegal,senegal,senegal,SEN,Senegal,exact
+Serbia,serbia,serbia,SRB,Serbia,exact
+Seychelles,seychelles,seychelles,SYC,Seychelles,exact
+Sierra Leone,sierra leone,sierra leone,SLE,Sierra Leone,exact
+Singapore,singapore,singapore,SGP,Singapore,exact
+Sint Maarten,sint maarten,sint maarten,SXM,Sint Maarten,exact
+Slovakia,slovakia,slovakia,SVK,Slovakia,exact
+Slovenia,slovenia,slovenia,SVN,Slovenia,exact
+Solomon Islands,solomon islands,solomon islands,SLB,Solomon Islands,exact
+Somalia,somalia,somalia,SOM,Somalia,exact
+South Africa,south africa,south africa,ZAF,South Africa,exact
+South America,south america,south america,,,unmatched
+South Georgia And The South Sandwich Isla,south georgia and the south sandwich isla,south georgia and the south sandwich isla,,,unmatched
+South Korea,south korea,south korea,KOR,South Korea,exact
+Spain,spain,spain,ESP,Spain,exact
+Sri Lanka,sri lanka,sri lanka,LKA,Sri Lanka,exact
+Sudan,sudan,sudan,SDN,Sudan,exact
+Suriname,suriname,suriname,SUR,Suriname,exact
+Svalbard And Jan Mayen,svalbard and jan mayen,svalbard and jan mayen,,,unmatched
+Swaziland,swaziland,eswatini,SWZ,Eswatini,manual_alias
+Sweden,sweden,sweden,SWE,Sweden,exact
+Switzerland,switzerland,switzerland,CHE,Switzerland,exact
+Syria,syria,syria,SYR,Syria,exact
+Taiwan,taiwan,taiwan,TWN,Taiwan,exact
+Tajikistan,tajikistan,tajikistan,TJK,Tajikistan,exact
+Tanzania,tanzania,tanzania,TZA,Tanzania,exact
+Thailand,thailand,thailand,THA,Thailand,exact
+Timor Leste,timor leste,timor leste,TLS,Timor-Leste,normalized
+Togo,togo,togo,TGO,Togo,exact
+Tonga,tonga,tonga,TON,Tonga,exact
+Trinidad And Tobago,trinidad and tobago,trinidad and tobago,TTO,Trinidad and Tobago,normalized
+Tunisia,tunisia,tunisia,TUN,Tunisia,exact
+Turkey,turkey,turkey,TUR,Turkey,exact
+Turkmenistan,turkmenistan,turkmenistan,TKM,Turkmenistan,exact
+Turks And Caicas Islands,turks and caicas islands,turks and caicos islands,TCA,Turks and Caicos Islands,manual_alias
+Uganda,uganda,uganda,UGA,Uganda,exact
+Ukraine,ukraine,ukraine,UKR,Ukraine,exact
+United Arab Emirates,united arab emirates,united arab emirates,ARE,United Arab Emirates,exact
+United Kingdom (Europe),united kingdom europe,united kingdom europe,,,unmatched
+United Kingdom,united kingdom,united kingdom,GBR,United Kingdom,exact
+United States,united states,united states,USA,United States,exact
+Uruguay,uruguay,uruguay,URY,Uruguay,exact
+Uzbekistan,uzbekistan,uzbekistan,UZB,Uzbekistan,exact
+Venezuela,venezuela,venezuela,VEN,Venezuela,exact
+Vietnam,vietnam,vietnam,VNM,Vietnam,exact
+Virgin Islands,virgin islands,united states virgin islands,VIR,United States Virgin Islands,manual_alias
+Western Sahara,western sahara,western sahara,ESH,Western Sahara,exact
+Yemen,yemen,yemen,YEM,Yemen,exact
+Zambia,zambia,zambia,ZMB,Zambia,exact
+Zimbabwe,zimbabwe,zimbabwe,ZWE,Zimbabwe,exact
