@@ -31,7 +31,51 @@
     "climate_start_date": "1743-11-01",
     "climate_end_date": "2013-09-01",
     "matched_countries": 221,
-    "unmatched_climate_locations": 22,
+    "unmatched_climate_locations": 18,
+    "unmatched_climate_names": [
+        "Africa",
+        "Antarctica",
+        "Asia",
+        "Baker Island",
+        "Bonaire, Saint Eustatius And Saba",
+        "Christmas Island",
+        "Europe",
+        "French Southern And Antarctic Lands",
+        "Gaza Strip",
+        "Heard Island And Mcdonald Islands",
+        "Kingman Reef",
+        "North America",
+        "Oceania",
+        "Palmyra Atoll",
+        "South America",
+        "South Georgia And The South Sandwich Isla",
+        "Svalbard And Jan Mayen",
+        "Åland"
+    ],
+    "manual_alias_matches": 15,
+    "excluded_alternative_climate_labels": 4,
+    "excluded_alternative_climate_names": [
+        "Denmark",
+        "France",
+        "Netherlands",
+        "United Kingdom"
+    ],
+    "population_without_climate_match": 13,
+    "population_without_climate_match_names": [
+        "Bermuda",
+        "Brunei",
+        "Cook Islands",
+        "Gibraltar",
+        "Maldives",
+        "Marshall Islands",
+        "Nauru",
+        "South Sudan",
+        "Tokelau",
+        "Tuvalu",
+        "Vanuatu",
+        "Vatican City",
+        "Wallis and Futuna"
+    ],
     "complete_country_years": 11050,
     "incomplete_country_years": 0,
     "complete_country_decades": 1105,
@@ -44,9 +88,9 @@
         "High": 221
     },
     "testing_class_distribution": {
-        "Medium": 95,
-        "High": 65,
-        "Low": 61
+        "Medium": 93,
+        "High": 66,
+        "Low": 62
     },
     "missing_training_growth": 221
 }

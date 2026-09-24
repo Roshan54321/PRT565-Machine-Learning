@@ -180,6 +180,7 @@ def load_and_audit(raw_dir: Path):
 # Do not automatically assume similar names
 # describe equivalent geographic populations.
 
+
 COUNTRY_ALIASES = {
     "burma": "myanmar",
     "congo": "republic of the congo",
@@ -192,8 +193,25 @@ COUNTRY_ALIASES = {
     "swaziland": "eswatini",
     "turks and caicas islands": "turks and caicos islands",
     "virgin islands": "united states virgin islands",
+
+    # European climate labels matched to the population-country names.
+    "united kingdom europe": "united kingdom",
+    "france europe": "france",
+    "denmark europe": "denmark",
+    "netherlands europe": "netherlands",
 }
 
+
+# The Berkeley Earth file contains both a normal label and a Europe-only
+# label for these countries. The population dataset represents the European
+# country geography, so we keep the (Europe) climate record and exclude the
+# broader alternative climate label from modelling.
+EXCLUDED_ALTERNATIVE_CLIMATE_LABELS = {
+    "United Kingdom",
+    "France",
+    "Denmark",
+    "Netherlands",
+}
 
 def normalize_country(name):
     """Normalize formatting without fuzzy matching."""
@@ -274,6 +292,9 @@ def make_country_crosswalk(
 
     crosswalk["matching_method"] = np.select(
         [
+            crosswalk["climate_country"].isin(
+                EXCLUDED_ALTERNATIVE_CLIMATE_LABELS
+            ),
             crosswalk["_merge"].eq("left_only"),
             crosswalk["normalized_name"].isin(
                 COUNTRY_ALIASES
@@ -283,6 +304,7 @@ def make_country_crosswalk(
             ),
         ],
         [
+            "excluded_alternative",
             "unmatched",
             "manual_alias",
             "exact",
@@ -290,20 +312,54 @@ def make_country_crosswalk(
         default="normalized"
     )
 
+    # Use only confirmed matches that are not the excluded alternative
+    # climate labels. This leaves exactly one climate source per country.
     matched = crosswalk[
         crosswalk["_merge"].eq("both")
+        & ~crosswalk["climate_country"].isin(
+            EXCLUDED_ALTERNATIVE_CLIMATE_LABELS
+        )
     ].copy()
 
     if matched["cca3"].duplicated().any():
+        duplicates = matched.loc[
+            matched["cca3"].duplicated(keep=False),
+            ["climate_country", "population_country", "cca3"]
+        ].sort_values("cca3")
+
         raise ValueError(
-            "Multiple climate locations map to one country. "
-            "Review the country crosswalk."
+            "Multiple climate locations still map to one country after "
+            "applying the preferred-source rules. Review the crosswalk.\n"
+            + duplicates.to_string(index=False)
         )
 
     return (
         matched.drop(columns="_merge"),
         crosswalk.drop(columns="_merge")
     )
+
+
+def find_population_only_countries(matched_countries, population):
+    """Find population countries/territories that have no matched climate record.
+
+    The crosswalk keeps all climate country names using a left join so that
+    unmatched climate names remain visible. This complementary audit checks
+    the opposite direction as well, so population entries without a confirmed
+    climate match are also documented.
+    """
+
+    matched_codes = set(
+        matched_countries["cca3"].dropna()
+    )
+
+    population_only = population.loc[
+        ~population["CCA3"].isin(matched_codes),
+        ["CCA3", "Country/Territory", "Continent"]
+    ].copy()
+
+    return population_only.sort_values(
+        "Country/Territory"
+    ).reset_index(drop=True)
 
 
 
@@ -326,6 +382,8 @@ def annual_climate_table(
         validate="many_to_one"
     )
 
+    # One preferred climate source is retained per country, so no averaging
+    # between normal and (Europe) labels is needed here.
     climate_matched["year"] = (
         climate_matched["dt"].dt.year
     )
@@ -927,6 +985,13 @@ def run_pipeline(project_root):
         population
     )
 
+    # Check the opposite direction as well:
+    # population countries/territories without a confirmed climate match.
+    population_only = find_population_only_countries(
+        matched,
+        population
+    )
+
     annual, incomplete = annual_climate_table(
         climate,
         matched
@@ -984,6 +1049,7 @@ def run_pipeline(project_root):
 
     output_files = {
         "country_matching_audit.csv": crosswalk,
+        "population_only_countries.csv": population_only,
         "annual_climate.csv": annual,
         "incomplete_country_years.csv": incomplete,
         "decadal_climate_features.csv": decades,
@@ -1010,6 +1076,34 @@ def run_pipeline(project_root):
         ),
         "unmatched_climate_locations": int(
             crosswalk["population_country"].isna().sum()
+        ),
+        "unmatched_climate_names": (
+            crosswalk.loc[
+                crosswalk["population_country"].isna(),
+                "climate_country"
+            ].sort_values().tolist()
+        ),
+        "manual_alias_matches": int(
+            crosswalk["matching_method"].eq("manual_alias").sum()
+        ),
+        "excluded_alternative_climate_labels": int(
+            crosswalk["matching_method"].eq(
+                "excluded_alternative"
+            ).sum()
+        ),
+        "excluded_alternative_climate_names": (
+            crosswalk.loc[
+                crosswalk["matching_method"].eq(
+                    "excluded_alternative"
+                ),
+                "climate_country"
+            ].sort_values().tolist()
+        ),
+        "population_without_climate_match": int(
+            len(population_only)
+        ),
+        "population_without_climate_match_names": (
+            population_only["Country/Territory"].tolist()
         ),
         "complete_country_years": int(
             len(annual)
@@ -1081,6 +1175,8 @@ def run_pipeline(project_root):
         "test": test_model,
         "audit": audit,
         "metadata": metadata,
+        "country_crosswalk": crosswalk,
+        "population_only": population_only,
     }
 
 

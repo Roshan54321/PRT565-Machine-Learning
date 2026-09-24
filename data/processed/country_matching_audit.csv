@@ -58,8 +58,8 @@ Cuba,cuba,cuba,CUB,Cuba,exact
 Curaçao,curacao,curacao,CUW,Curacao,normalized
 Cyprus,cyprus,cyprus,CYP,Cyprus,exact
 Czech Republic,czech republic,czech republic,CZE,Czech Republic,exact
-Denmark (Europe),denmark europe,denmark europe,,,unmatched
-Denmark,denmark,denmark,DNK,Denmark,exact
+Denmark (Europe),denmark europe,denmark,DNK,Denmark,manual_alias
+Denmark,denmark,denmark,DNK,Denmark,excluded_alternative
 Djibouti,djibouti,djibouti,DJI,Djibouti,exact
 Dominica,dominica,dominica,DMA,Dominica,exact
 Dominican Republic,dominican republic,dominican republic,DOM,Dominican Republic,exact
@@ -76,8 +76,8 @@ Faroe Islands,faroe islands,faroe islands,FRO,Faroe Islands,exact
 Federated States Of Micronesia,federated states of micronesia,micronesia,FSM,Micronesia,manual_alias
 Fiji,fiji,fiji,FJI,Fiji,exact
 Finland,finland,finland,FIN,Finland,exact
-France (Europe),france europe,france europe,,,unmatched
-France,france,france,FRA,France,exact
+France (Europe),france europe,france,FRA,France,manual_alias
+France,france,france,FRA,France,excluded_alternative
 French Guiana,french guiana,french guiana,GUF,French Guiana,exact
 French Polynesia,french polynesia,french polynesia,PYF,French Polynesia,exact
 French Southern And Antarctic Lands,french southern and antarctic lands,french southern and antarctic lands,,,unmatched
@@ -151,8 +151,8 @@ Morocco,morocco,morocco,MAR,Morocco,exact
 Mozambique,mozambique,mozambique,MOZ,Mozambique,exact
 Namibia,namibia,namibia,NAM,Namibia,exact
 Nepal,nepal,nepal,NPL,Nepal,exact
-Netherlands (Europe),netherlands europe,netherlands europe,,,unmatched
-Netherlands,netherlands,netherlands,NLD,Netherlands,exact
+Netherlands (Europe),netherlands europe,netherlands,NLD,Netherlands,manual_alias
+Netherlands,netherlands,netherlands,NLD,Netherlands,excluded_alternative
 New Caledonia,new caledonia,new caledonia,NCL,New Caledonia,exact
 New Zealand,new zealand,new zealand,NZL,New Zealand,exact
 Nicaragua,nicaragua,nicaragua,NIC,Nicaragua,exact
@@ -230,8 +230,8 @@ Turks And Caicas Islands,turks and caicas islands,turks and caicos islands,TCA,T
 Uganda,uganda,uganda,UGA,Uganda,exact
 Ukraine,ukraine,ukraine,UKR,Ukraine,exact
 United Arab Emirates,united arab emirates,united arab emirates,ARE,United Arab Emirates,exact
-United Kingdom (Europe),united kingdom europe,united kingdom europe,,,unmatched
-United Kingdom,united kingdom,united kingdom,GBR,United Kingdom,exact
+United Kingdom (Europe),united kingdom europe,united kingdom,GBR,United Kingdom,manual_alias
+United Kingdom,united kingdom,united kingdom,GBR,United Kingdom,excluded_alternative
 United States,united states,united states,USA,United States,exact
 Uruguay,uruguay,uruguay,URY,Uruguay,exact
 Uzbekistan,uzbekistan,uzbekistan,UZB,Uzbekistan,exact

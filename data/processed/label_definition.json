@@ -6,8 +6,8 @@
         1990
     ],
     "test_year": 2000,
-    "low_medium_cutoff": 0.31710216506635297,
-    "medium_high_cutoff": 0.5616103896401036,
+    "low_medium_cutoff": 0.3167928622368976,
+    "medium_high_cutoff": 0.5620865565110754,
     "predictors": [
         "population_at_reference",
         "density_at_reference_per_km2",
