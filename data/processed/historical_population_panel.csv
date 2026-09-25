@@ -1,4 +1,4 @@
-cca3,country,continent,area_km2,population_year,population,density_per_km2,growth_prior_decade_pct
+cca3,country,continent,area_km2,year,population,density_per_km2,growth_prior_decade_pct
 ABW,Aruba,North America,180,1970,59106,328.3666666666667,
 ABW,Aruba,North America,180,1980,62267,345.9277777777778,5.34801881365683
 ABW,Aruba,North America,180,1990,65712,365.06666666666666,5.532625628342469

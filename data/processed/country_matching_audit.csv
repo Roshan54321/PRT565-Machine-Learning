@@ -1,244 +1,235 @@
-climate_country,normalized_name,join_key,cca3,population_country,matching_method
-Åland,aland,aland,,,unmatched
-Afghanistan,afghanistan,afghanistan,AFG,Afghanistan,exact
-Africa,africa,africa,,,unmatched
-Albania,albania,albania,ALB,Albania,exact
-Algeria,algeria,algeria,DZA,Algeria,exact
-American Samoa,american samoa,american samoa,ASM,American Samoa,exact
-Andorra,andorra,andorra,AND,Andorra,exact
-Angola,angola,angola,AGO,Angola,exact
-Anguilla,anguilla,anguilla,AIA,Anguilla,exact
-Antarctica,antarctica,antarctica,,,unmatched
-Antigua And Barbuda,antigua and barbuda,antigua and barbuda,ATG,Antigua and Barbuda,normalized
-Argentina,argentina,argentina,ARG,Argentina,exact
-Armenia,armenia,armenia,ARM,Armenia,exact
-Aruba,aruba,aruba,ABW,Aruba,exact
-Asia,asia,asia,,,unmatched
-Australia,australia,australia,AUS,Australia,exact
-Austria,austria,austria,AUT,Austria,exact
-Azerbaijan,azerbaijan,azerbaijan,AZE,Azerbaijan,exact
-Bahamas,bahamas,bahamas,BHS,Bahamas,exact
-Bahrain,bahrain,bahrain,BHR,Bahrain,exact
-Baker Island,baker island,baker island,,,unmatched
-Bangladesh,bangladesh,bangladesh,BGD,Bangladesh,exact
-Barbados,barbados,barbados,BRB,Barbados,exact
-Belarus,belarus,belarus,BLR,Belarus,exact
-Belgium,belgium,belgium,BEL,Belgium,exact
-Belize,belize,belize,BLZ,Belize,exact
-Benin,benin,benin,BEN,Benin,exact
-Bhutan,bhutan,bhutan,BTN,Bhutan,exact
-Bolivia,bolivia,bolivia,BOL,Bolivia,exact
-"Bonaire, Saint Eustatius And Saba",bonaire saint eustatius and saba,bonaire saint eustatius and saba,,,unmatched
-Bosnia And Herzegovina,bosnia and herzegovina,bosnia and herzegovina,BIH,Bosnia and Herzegovina,normalized
-Botswana,botswana,botswana,BWA,Botswana,exact
-Brazil,brazil,brazil,BRA,Brazil,exact
-British Virgin Islands,british virgin islands,british virgin islands,VGB,British Virgin Islands,exact
-Bulgaria,bulgaria,bulgaria,BGR,Bulgaria,exact
-Burkina Faso,burkina faso,burkina faso,BFA,Burkina Faso,exact
-Burma,burma,myanmar,MMR,Myanmar,manual_alias
-Burundi,burundi,burundi,BDI,Burundi,exact
-Côte D'Ivoire,cote d ivoire,ivory coast,CIV,Ivory Coast,manual_alias
-Cambodia,cambodia,cambodia,KHM,Cambodia,exact
-Cameroon,cameroon,cameroon,CMR,Cameroon,exact
-Canada,canada,canada,CAN,Canada,exact
-Cape Verde,cape verde,cape verde,CPV,Cape Verde,exact
-Cayman Islands,cayman islands,cayman islands,CYM,Cayman Islands,exact
-Central African Republic,central african republic,central african republic,CAF,Central African Republic,exact
-Chad,chad,chad,TCD,Chad,exact
-Chile,chile,chile,CHL,Chile,exact
-China,china,china,CHN,China,exact
-Christmas Island,christmas island,christmas island,,,unmatched
-Colombia,colombia,colombia,COL,Colombia,exact
-Comoros,comoros,comoros,COM,Comoros,exact
-Congo (Democratic Republic Of The),congo democratic republic of the,dr congo,COD,DR Congo,manual_alias
-Congo,congo,republic of the congo,COG,Republic of the Congo,manual_alias
-Costa Rica,costa rica,costa rica,CRI,Costa Rica,exact
-Croatia,croatia,croatia,HRV,Croatia,exact
-Cuba,cuba,cuba,CUB,Cuba,exact
-Curaçao,curacao,curacao,CUW,Curacao,normalized
-Cyprus,cyprus,cyprus,CYP,Cyprus,exact
-Czech Republic,czech republic,czech republic,CZE,Czech Republic,exact
-Denmark (Europe),denmark europe,denmark europe,,,unmatched
-Denmark,denmark,denmark,DNK,Denmark,exact
-Djibouti,djibouti,djibouti,DJI,Djibouti,exact
-Dominica,dominica,dominica,DMA,Dominica,exact
-Dominican Republic,dominican republic,dominican republic,DOM,Dominican Republic,exact
-Ecuador,ecuador,ecuador,ECU,Ecuador,exact
-Egypt,egypt,egypt,EGY,Egypt,exact
-El Salvador,el salvador,el salvador,SLV,El Salvador,exact
-Equatorial Guinea,equatorial guinea,equatorial guinea,GNQ,Equatorial Guinea,exact
-Eritrea,eritrea,eritrea,ERI,Eritrea,exact
-Estonia,estonia,estonia,EST,Estonia,exact
-Ethiopia,ethiopia,ethiopia,ETH,Ethiopia,exact
-Europe,europe,europe,,,unmatched
-Falkland Islands (Islas Malvinas),falkland islands islas malvinas,falkland islands,FLK,Falkland Islands,manual_alias
-Faroe Islands,faroe islands,faroe islands,FRO,Faroe Islands,exact
-Federated States Of Micronesia,federated states of micronesia,micronesia,FSM,Micronesia,manual_alias
-Fiji,fiji,fiji,FJI,Fiji,exact
-Finland,finland,finland,FIN,Finland,exact
-France (Europe),france europe,france europe,,,unmatched
-France,france,france,FRA,France,exact
-French Guiana,french guiana,french guiana,GUF,French Guiana,exact
-French Polynesia,french polynesia,french polynesia,PYF,French Polynesia,exact
-French Southern And Antarctic Lands,french southern and antarctic lands,french southern and antarctic lands,,,unmatched
-Gabon,gabon,gabon,GAB,Gabon,exact
-Gambia,gambia,gambia,GMB,Gambia,exact
-Gaza Strip,gaza strip,gaza strip,,,unmatched
-Georgia,georgia,georgia,GEO,Georgia,exact
-Germany,germany,germany,DEU,Germany,exact
-Ghana,ghana,ghana,GHA,Ghana,exact
-Greece,greece,greece,GRC,Greece,exact
-Greenland,greenland,greenland,GRL,Greenland,exact
-Grenada,grenada,grenada,GRD,Grenada,exact
-Guadeloupe,guadeloupe,guadeloupe,GLP,Guadeloupe,exact
-Guam,guam,guam,GUM,Guam,exact
-Guatemala,guatemala,guatemala,GTM,Guatemala,exact
-Guernsey,guernsey,guernsey,GGY,Guernsey,exact
-Guinea Bissau,guinea bissau,guinea bissau,GNB,Guinea-Bissau,normalized
-Guinea,guinea,guinea,GIN,Guinea,exact
-Guyana,guyana,guyana,GUY,Guyana,exact
-Haiti,haiti,haiti,HTI,Haiti,exact
-Heard Island And Mcdonald Islands,heard island and mcdonald islands,heard island and mcdonald islands,,,unmatched
-Honduras,honduras,honduras,HND,Honduras,exact
-Hong Kong,hong kong,hong kong,HKG,Hong Kong,exact
-Hungary,hungary,hungary,HUN,Hungary,exact
-Iceland,iceland,iceland,ISL,Iceland,exact
-India,india,india,IND,India,exact
-Indonesia,indonesia,indonesia,IDN,Indonesia,exact
-Iran,iran,iran,IRN,Iran,exact
-Iraq,iraq,iraq,IRQ,Iraq,exact
-Ireland,ireland,ireland,IRL,Ireland,exact
-Isle Of Man,isle of man,isle of man,IMN,Isle of Man,normalized
-Israel,israel,israel,ISR,Israel,exact
-Italy,italy,italy,ITA,Italy,exact
-Jamaica,jamaica,jamaica,JAM,Jamaica,exact
-Japan,japan,japan,JPN,Japan,exact
-Jersey,jersey,jersey,JEY,Jersey,exact
-Jordan,jordan,jordan,JOR,Jordan,exact
-Kazakhstan,kazakhstan,kazakhstan,KAZ,Kazakhstan,exact
-Kenya,kenya,kenya,KEN,Kenya,exact
-Kingman Reef,kingman reef,kingman reef,,,unmatched
-Kiribati,kiribati,kiribati,KIR,Kiribati,exact
-Kuwait,kuwait,kuwait,KWT,Kuwait,exact
-Kyrgyzstan,kyrgyzstan,kyrgyzstan,KGZ,Kyrgyzstan,exact
-Laos,laos,laos,LAO,Laos,exact
-Latvia,latvia,latvia,LVA,Latvia,exact
-Lebanon,lebanon,lebanon,LBN,Lebanon,exact
-Lesotho,lesotho,lesotho,LSO,Lesotho,exact
-Liberia,liberia,liberia,LBR,Liberia,exact
-Libya,libya,libya,LBY,Libya,exact
-Liechtenstein,liechtenstein,liechtenstein,LIE,Liechtenstein,exact
-Lithuania,lithuania,lithuania,LTU,Lithuania,exact
-Luxembourg,luxembourg,luxembourg,LUX,Luxembourg,exact
-Macau,macau,macau,MAC,Macau,exact
-Macedonia,macedonia,north macedonia,MKD,North Macedonia,manual_alias
-Madagascar,madagascar,madagascar,MDG,Madagascar,exact
-Malawi,malawi,malawi,MWI,Malawi,exact
-Malaysia,malaysia,malaysia,MYS,Malaysia,exact
-Mali,mali,mali,MLI,Mali,exact
-Malta,malta,malta,MLT,Malta,exact
-Martinique,martinique,martinique,MTQ,Martinique,exact
-Mauritania,mauritania,mauritania,MRT,Mauritania,exact
-Mauritius,mauritius,mauritius,MUS,Mauritius,exact
-Mayotte,mayotte,mayotte,MYT,Mayotte,exact
-Mexico,mexico,mexico,MEX,Mexico,exact
-Moldova,moldova,moldova,MDA,Moldova,exact
-Monaco,monaco,monaco,MCO,Monaco,exact
-Mongolia,mongolia,mongolia,MNG,Mongolia,exact
-Montenegro,montenegro,montenegro,MNE,Montenegro,exact
-Montserrat,montserrat,montserrat,MSR,Montserrat,exact
-Morocco,morocco,morocco,MAR,Morocco,exact
-Mozambique,mozambique,mozambique,MOZ,Mozambique,exact
-Namibia,namibia,namibia,NAM,Namibia,exact
-Nepal,nepal,nepal,NPL,Nepal,exact
-Netherlands (Europe),netherlands europe,netherlands europe,,,unmatched
-Netherlands,netherlands,netherlands,NLD,Netherlands,exact
-New Caledonia,new caledonia,new caledonia,NCL,New Caledonia,exact
-New Zealand,new zealand,new zealand,NZL,New Zealand,exact
-Nicaragua,nicaragua,nicaragua,NIC,Nicaragua,exact
-Niger,niger,niger,NER,Niger,exact
-Nigeria,nigeria,nigeria,NGA,Nigeria,exact
-Niue,niue,niue,NIU,Niue,exact
-North America,north america,north america,,,unmatched
-North Korea,north korea,north korea,PRK,North Korea,exact
-Northern Mariana Islands,northern mariana islands,northern mariana islands,NFK,Northern Mariana Islands,exact
-Norway,norway,norway,NOR,Norway,exact
-Oceania,oceania,oceania,,,unmatched
-Oman,oman,oman,OMN,Oman,exact
-Pakistan,pakistan,pakistan,PAK,Pakistan,exact
-Palau,palau,palau,PLW,Palau,exact
-Palestina,palestina,palestine,PSE,Palestine,manual_alias
-Palmyra Atoll,palmyra atoll,palmyra atoll,,,unmatched
-Panama,panama,panama,PAN,Panama,exact
-Papua New Guinea,papua new guinea,papua new guinea,PNG,Papua New Guinea,exact
-Paraguay,paraguay,paraguay,PRY,Paraguay,exact
-Peru,peru,peru,PER,Peru,exact
-Philippines,philippines,philippines,PHL,Philippines,exact
-Poland,poland,poland,POL,Poland,exact
-Portugal,portugal,portugal,PRT,Portugal,exact
-Puerto Rico,puerto rico,puerto rico,PRI,Puerto Rico,exact
-Qatar,qatar,qatar,QAT,Qatar,exact
-Reunion,reunion,reunion,REU,Reunion,exact
-Romania,romania,romania,ROU,Romania,exact
-Russia,russia,russia,RUS,Russia,exact
-Rwanda,rwanda,rwanda,RWA,Rwanda,exact
-Saint Barthélemy,saint barthelemy,saint barthelemy,BLM,Saint Barthelemy,normalized
-Saint Kitts And Nevis,saint kitts and nevis,saint kitts and nevis,KNA,Saint Kitts and Nevis,normalized
-Saint Lucia,saint lucia,saint lucia,LCA,Saint Lucia,exact
-Saint Martin,saint martin,saint martin,MAF,Saint Martin,exact
-Saint Pierre And Miquelon,saint pierre and miquelon,saint pierre and miquelon,SPM,Saint Pierre and Miquelon,normalized
-Saint Vincent And The Grenadines,saint vincent and the grenadines,saint vincent and the grenadines,VCT,Saint Vincent and the Grenadines,normalized
-Samoa,samoa,samoa,WSM,Samoa,exact
-San Marino,san marino,san marino,SMR,San Marino,exact
-Sao Tome And Principe,sao tome and principe,sao tome and principe,STP,Sao Tome and Principe,normalized
-Saudi Arabia,saudi arabia,saudi arabia,SAU,Saudi Arabia,exact
-Senegal,senegal,senegal,SEN,Senegal,exact
-Serbia,serbia,serbia,SRB,Serbia,exact
-Seychelles,seychelles,seychelles,SYC,Seychelles,exact
-Sierra Leone,sierra leone,sierra leone,SLE,Sierra Leone,exact
-Singapore,singapore,singapore,SGP,Singapore,exact
-Sint Maarten,sint maarten,sint maarten,SXM,Sint Maarten,exact
-Slovakia,slovakia,slovakia,SVK,Slovakia,exact
-Slovenia,slovenia,slovenia,SVN,Slovenia,exact
-Solomon Islands,solomon islands,solomon islands,SLB,Solomon Islands,exact
-Somalia,somalia,somalia,SOM,Somalia,exact
-South Africa,south africa,south africa,ZAF,South Africa,exact
-South America,south america,south america,,,unmatched
-South Georgia And The South Sandwich Isla,south georgia and the south sandwich isla,south georgia and the south sandwich isla,,,unmatched
-South Korea,south korea,south korea,KOR,South Korea,exact
-Spain,spain,spain,ESP,Spain,exact
-Sri Lanka,sri lanka,sri lanka,LKA,Sri Lanka,exact
-Sudan,sudan,sudan,SDN,Sudan,exact
-Suriname,suriname,suriname,SUR,Suriname,exact
-Svalbard And Jan Mayen,svalbard and jan mayen,svalbard and jan mayen,,,unmatched
-Swaziland,swaziland,eswatini,SWZ,Eswatini,manual_alias
-Sweden,sweden,sweden,SWE,Sweden,exact
-Switzerland,switzerland,switzerland,CHE,Switzerland,exact
-Syria,syria,syria,SYR,Syria,exact
-Taiwan,taiwan,taiwan,TWN,Taiwan,exact
-Tajikistan,tajikistan,tajikistan,TJK,Tajikistan,exact
-Tanzania,tanzania,tanzania,TZA,Tanzania,exact
-Thailand,thailand,thailand,THA,Thailand,exact
-Timor Leste,timor leste,timor leste,TLS,Timor-Leste,normalized
-Togo,togo,togo,TGO,Togo,exact
-Tonga,tonga,tonga,TON,Tonga,exact
-Trinidad And Tobago,trinidad and tobago,trinidad and tobago,TTO,Trinidad and Tobago,normalized
-Tunisia,tunisia,tunisia,TUN,Tunisia,exact
-Turkey,turkey,turkey,TUR,Turkey,exact
-Turkmenistan,turkmenistan,turkmenistan,TKM,Turkmenistan,exact
-Turks And Caicas Islands,turks and caicas islands,turks and caicos islands,TCA,Turks and Caicos Islands,manual_alias
-Uganda,uganda,uganda,UGA,Uganda,exact
-Ukraine,ukraine,ukraine,UKR,Ukraine,exact
-United Arab Emirates,united arab emirates,united arab emirates,ARE,United Arab Emirates,exact
-United Kingdom (Europe),united kingdom europe,united kingdom europe,,,unmatched
-United Kingdom,united kingdom,united kingdom,GBR,United Kingdom,exact
-United States,united states,united states,USA,United States,exact
-Uruguay,uruguay,uruguay,URY,Uruguay,exact
-Uzbekistan,uzbekistan,uzbekistan,UZB,Uzbekistan,exact
-Venezuela,venezuela,venezuela,VEN,Venezuela,exact
-Vietnam,vietnam,vietnam,VNM,Vietnam,exact
-Virgin Islands,virgin islands,united states virgin islands,VIR,United States Virgin Islands,manual_alias
-Western Sahara,western sahara,western sahara,ESH,Western Sahara,exact
-Yemen,yemen,yemen,YEM,Yemen,exact
-Zambia,zambia,zambia,ZMB,Zambia,exact
-Zimbabwe,zimbabwe,zimbabwe,ZWE,Zimbabwe,exact
+CCA3,Country/Territory,join_key,Country,_merge
+AFG,Afghanistan,afghanistan,Afghanistan,both
+ALB,Albania,albania,Albania,both
+DZA,Algeria,algeria,Algeria,both
+ASM,American Samoa,american samoa,American Samoa,both
+AND,Andorra,andorra,Andorra,both
+AGO,Angola,angola,Angola,both
+AIA,Anguilla,anguilla,Anguilla,both
+ATG,Antigua and Barbuda,antigua and barbuda,Antigua And Barbuda,both
+ARG,Argentina,argentina,Argentina,both
+ARM,Armenia,armenia,Armenia,both
+ABW,Aruba,aruba,Aruba,both
+AUS,Australia,australia,Australia,both
+AUT,Austria,austria,Austria,both
+AZE,Azerbaijan,azerbaijan,Azerbaijan,both
+BHS,Bahamas,bahamas,Bahamas,both
+BHR,Bahrain,bahrain,Bahrain,both
+BGD,Bangladesh,bangladesh,Bangladesh,both
+BRB,Barbados,barbados,Barbados,both
+BLR,Belarus,belarus,Belarus,both
+BEL,Belgium,belgium,Belgium,both
+BLZ,Belize,belize,Belize,both
+BEN,Benin,benin,Benin,both
+BMU,Bermuda,bermuda,,left_only
+BTN,Bhutan,bhutan,Bhutan,both
+BOL,Bolivia,bolivia,Bolivia,both
+BIH,Bosnia and Herzegovina,bosnia and herzegovina,Bosnia And Herzegovina,both
+BWA,Botswana,botswana,Botswana,both
+BRA,Brazil,brazil,Brazil,both
+VGB,British Virgin Islands,british virgin islands,British Virgin Islands,both
+BRN,Brunei,brunei,,left_only
+BGR,Bulgaria,bulgaria,Bulgaria,both
+BFA,Burkina Faso,burkina faso,Burkina Faso,both
+BDI,Burundi,burundi,Burundi,both
+KHM,Cambodia,cambodia,Cambodia,both
+CMR,Cameroon,cameroon,Cameroon,both
+CAN,Canada,canada,Canada,both
+CPV,Cape Verde,cape verde,Cape Verde,both
+CYM,Cayman Islands,cayman islands,Cayman Islands,both
+CAF,Central African Republic,central african republic,Central African Republic,both
+TCD,Chad,chad,Chad,both
+CHL,Chile,chile,Chile,both
+CHN,China,china,China,both
+COL,Colombia,colombia,Colombia,both
+COM,Comoros,comoros,Comoros,both
+COK,Cook Islands,cook islands,,left_only
+CRI,Costa Rica,costa rica,Costa Rica,both
+HRV,Croatia,croatia,Croatia,both
+CUB,Cuba,cuba,Cuba,both
+CUW,Curacao,curacao,Curaçao,both
+CYP,Cyprus,cyprus,Cyprus,both
+CZE,Czech Republic,czech republic,Czech Republic,both
+DNK,Denmark,denmark,Denmark (Europe),both
+DJI,Djibouti,djibouti,Djibouti,both
+DMA,Dominica,dominica,Dominica,both
+DOM,Dominican Republic,dominican republic,Dominican Republic,both
+COD,DR Congo,dr congo,Congo (Democratic Republic Of The),both
+ECU,Ecuador,ecuador,Ecuador,both
+EGY,Egypt,egypt,Egypt,both
+SLV,El Salvador,el salvador,El Salvador,both
+GNQ,Equatorial Guinea,equatorial guinea,Equatorial Guinea,both
+ERI,Eritrea,eritrea,Eritrea,both
+EST,Estonia,estonia,Estonia,both
+SWZ,Eswatini,eswatini,Swaziland,both
+ETH,Ethiopia,ethiopia,Ethiopia,both
+FLK,Falkland Islands,falkland islands,Falkland Islands (Islas Malvinas),both
+FRO,Faroe Islands,faroe islands,Faroe Islands,both
+FJI,Fiji,fiji,Fiji,both
+FIN,Finland,finland,Finland,both
+FRA,France,france,France (Europe),both
+GUF,French Guiana,french guiana,French Guiana,both
+PYF,French Polynesia,french polynesia,French Polynesia,both
+GAB,Gabon,gabon,Gabon,both
+GMB,Gambia,gambia,Gambia,both
+GEO,Georgia,georgia,Georgia,both
+DEU,Germany,germany,Germany,both
+GHA,Ghana,ghana,Ghana,both
+GIB,Gibraltar,gibraltar,,left_only
+GRC,Greece,greece,Greece,both
+GRL,Greenland,greenland,Greenland,both
+GRD,Grenada,grenada,Grenada,both
+GLP,Guadeloupe,guadeloupe,Guadeloupe,both
+GUM,Guam,guam,Guam,both
+GTM,Guatemala,guatemala,Guatemala,both
+GGY,Guernsey,guernsey,Guernsey,both
+GIN,Guinea,guinea,Guinea,both
+GNB,Guinea-Bissau,guinea bissau,Guinea Bissau,both
+GUY,Guyana,guyana,Guyana,both
+HTI,Haiti,haiti,Haiti,both
+HND,Honduras,honduras,Honduras,both
+HKG,Hong Kong,hong kong,Hong Kong,both
+HUN,Hungary,hungary,Hungary,both
+ISL,Iceland,iceland,Iceland,both
+IND,India,india,India,both
+IDN,Indonesia,indonesia,Indonesia,both
+IRN,Iran,iran,Iran,both
+IRQ,Iraq,iraq,Iraq,both
+IRL,Ireland,ireland,Ireland,both
+IMN,Isle of Man,isle of man,Isle Of Man,both
+ISR,Israel,israel,Israel,both
+ITA,Italy,italy,Italy,both
+CIV,Ivory Coast,ivory coast,Côte D'Ivoire,both
+JAM,Jamaica,jamaica,Jamaica,both
+JPN,Japan,japan,Japan,both
+JEY,Jersey,jersey,Jersey,both
+JOR,Jordan,jordan,Jordan,both
+KAZ,Kazakhstan,kazakhstan,Kazakhstan,both
+KEN,Kenya,kenya,Kenya,both
+KIR,Kiribati,kiribati,Kiribati,both
+KWT,Kuwait,kuwait,Kuwait,both
+KGZ,Kyrgyzstan,kyrgyzstan,Kyrgyzstan,both
+LAO,Laos,laos,Laos,both
+LVA,Latvia,latvia,Latvia,both
+LBN,Lebanon,lebanon,Lebanon,both
+LSO,Lesotho,lesotho,Lesotho,both
+LBR,Liberia,liberia,Liberia,both
+LBY,Libya,libya,Libya,both
+LIE,Liechtenstein,liechtenstein,Liechtenstein,both
+LTU,Lithuania,lithuania,Lithuania,both
+LUX,Luxembourg,luxembourg,Luxembourg,both
+MAC,Macau,macau,Macau,both
+MDG,Madagascar,madagascar,Madagascar,both
+MWI,Malawi,malawi,Malawi,both
+MYS,Malaysia,malaysia,Malaysia,both
+MDV,Maldives,maldives,,left_only
+MLI,Mali,mali,Mali,both
+MLT,Malta,malta,Malta,both
+MHL,Marshall Islands,marshall islands,,left_only
+MTQ,Martinique,martinique,Martinique,both
+MRT,Mauritania,mauritania,Mauritania,both
+MUS,Mauritius,mauritius,Mauritius,both
+MYT,Mayotte,mayotte,Mayotte,both
+MEX,Mexico,mexico,Mexico,both
+FSM,Micronesia,micronesia,Federated States Of Micronesia,both
+MDA,Moldova,moldova,Moldova,both
+MCO,Monaco,monaco,Monaco,both
+MNG,Mongolia,mongolia,Mongolia,both
+MNE,Montenegro,montenegro,Montenegro,both
+MSR,Montserrat,montserrat,Montserrat,both
+MAR,Morocco,morocco,Morocco,both
+MOZ,Mozambique,mozambique,Mozambique,both
+MMR,Myanmar,myanmar,Burma,both
+NAM,Namibia,namibia,Namibia,both
+NRU,Nauru,nauru,,left_only
+NPL,Nepal,nepal,Nepal,both
+NLD,Netherlands,netherlands,Netherlands (Europe),both
+NCL,New Caledonia,new caledonia,New Caledonia,both
+NZL,New Zealand,new zealand,New Zealand,both
+NIC,Nicaragua,nicaragua,Nicaragua,both
+NER,Niger,niger,Niger,both
+NGA,Nigeria,nigeria,Nigeria,both
+NIU,Niue,niue,Niue,both
+PRK,North Korea,north korea,North Korea,both
+MKD,North Macedonia,north macedonia,Macedonia,both
+NFK,Northern Mariana Islands,northern mariana islands,Northern Mariana Islands,both
+NOR,Norway,norway,Norway,both
+OMN,Oman,oman,Oman,both
+PAK,Pakistan,pakistan,Pakistan,both
+PLW,Palau,palau,Palau,both
+PSE,Palestine,palestine,Palestina,both
+PAN,Panama,panama,Panama,both
+PNG,Papua New Guinea,papua new guinea,Papua New Guinea,both
+PRY,Paraguay,paraguay,Paraguay,both
+PER,Peru,peru,Peru,both
+PHL,Philippines,philippines,Philippines,both
+POL,Poland,poland,Poland,both
+PRT,Portugal,portugal,Portugal,both
+PRI,Puerto Rico,puerto rico,Puerto Rico,both
+QAT,Qatar,qatar,Qatar,both
+COG,Republic of the Congo,republic of the congo,Congo,both
+REU,Reunion,reunion,Reunion,both
+ROU,Romania,romania,Romania,both
+RUS,Russia,russia,Russia,both
+RWA,Rwanda,rwanda,Rwanda,both
+BLM,Saint Barthelemy,saint barthelemy,Saint Barthélemy,both
+KNA,Saint Kitts and Nevis,saint kitts and nevis,Saint Kitts And Nevis,both
+LCA,Saint Lucia,saint lucia,Saint Lucia,both
+MAF,Saint Martin,saint martin,Saint Martin,both
+SPM,Saint Pierre and Miquelon,saint pierre and miquelon,Saint Pierre And Miquelon,both
+VCT,Saint Vincent and the Grenadines,saint vincent and the grenadines,Saint Vincent And The Grenadines,both
+WSM,Samoa,samoa,Samoa,both
+SMR,San Marino,san marino,San Marino,both
+STP,Sao Tome and Principe,sao tome and principe,Sao Tome And Principe,both
+SAU,Saudi Arabia,saudi arabia,Saudi Arabia,both
+SEN,Senegal,senegal,Senegal,both
+SRB,Serbia,serbia,Serbia,both
+SYC,Seychelles,seychelles,Seychelles,both
+SLE,Sierra Leone,sierra leone,Sierra Leone,both
+SGP,Singapore,singapore,Singapore,both
+SXM,Sint Maarten,sint maarten,Sint Maarten,both
+SVK,Slovakia,slovakia,Slovakia,both
+SVN,Slovenia,slovenia,Slovenia,both
+SLB,Solomon Islands,solomon islands,Solomon Islands,both
+SOM,Somalia,somalia,Somalia,both
+ZAF,South Africa,south africa,South Africa,both
+KOR,South Korea,south korea,South Korea,both
+SSD,South Sudan,south sudan,,left_only
+ESP,Spain,spain,Spain,both
+LKA,Sri Lanka,sri lanka,Sri Lanka,both
+SDN,Sudan,sudan,Sudan,both
+SUR,Suriname,suriname,Suriname,both
+SWE,Sweden,sweden,Sweden,both
+CHE,Switzerland,switzerland,Switzerland,both
+SYR,Syria,syria,Syria,both
+TWN,Taiwan,taiwan,Taiwan,both
+TJK,Tajikistan,tajikistan,Tajikistan,both
+TZA,Tanzania,tanzania,Tanzania,both
+THA,Thailand,thailand,Thailand,both
+TLS,Timor-Leste,timor leste,Timor Leste,both
+TGO,Togo,togo,Togo,both
+TKL,Tokelau,tokelau,,left_only
+TON,Tonga,tonga,Tonga,both
+TTO,Trinidad and Tobago,trinidad and tobago,Trinidad And Tobago,both
+TUN,Tunisia,tunisia,Tunisia,both
+TUR,Turkey,turkey,Turkey,both
+TKM,Turkmenistan,turkmenistan,Turkmenistan,both
+TCA,Turks and Caicos Islands,turks and caicos islands,Turks And Caicas Islands,both
+TUV,Tuvalu,tuvalu,,left_only
+UGA,Uganda,uganda,Uganda,both
+UKR,Ukraine,ukraine,Ukraine,both
+ARE,United Arab Emirates,united arab emirates,United Arab Emirates,both
+GBR,United Kingdom,united kingdom,United Kingdom (Europe),both
+USA,United States,united states,United States,both
+VIR,United States Virgin Islands,united states virgin islands,Virgin Islands,both
+URY,Uruguay,uruguay,Uruguay,both
+UZB,Uzbekistan,uzbekistan,Uzbekistan,both
+VUT,Vanuatu,vanuatu,,left_only
+VAT,Vatican City,vatican city,,left_only
+VEN,Venezuela,venezuela,Venezuela,both
+VNM,Vietnam,vietnam,Vietnam,both
+WLF,Wallis and Futuna,wallis and futuna,,left_only
+ESH,Western Sahara,western sahara,Western Sahara,both
+YEM,Yemen,yemen,Yemen,both
+ZMB,Zambia,zambia,Zambia,both
+ZWE,Zimbabwe,zimbabwe,Zimbabwe,both
